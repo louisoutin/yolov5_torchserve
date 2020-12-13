@@ -1,8 +1,9 @@
 # Yolov5 running on TorchServe (GPU compatible) !
 
-This is a docker image for Yolo V5 to be run with TorchServe (http server with high performance and using jitted version of the network).
+This is a dockerfile to run TorchServe for Yolo v5 object detection model. 
+(TorchServe (PyTorch library) is a flexible and easy to use tool for serving deep learning models exported from PyTorch).
 
-The cool thing with this dockerfile, is that you just need to pass it a yolov5 weights file (.pt) and it will deploy a http server, serving the predictions.
+You just need to pass a yolov5 weights file (.pt) in the ressources folder and it will deploy a http server, ready to serve predictions.
 
 ![alt text](request_screenshot.png)
 

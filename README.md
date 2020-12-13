@@ -8,7 +8,7 @@ You just need to pass a yolov5 weights file (.pt) in the ressources folder and i
 ![alt text](request_screenshot.png)
 
 
-## Usage
+## Setting up the docker image
 
 1) Build the torchserve image locally if using a GPU (error with the dockerhub one):
 `Build the image torchserve locally for GPU before running this (cf github torchserve)`
@@ -29,6 +29,29 @@ You just need to pass a yolov5 weights file (.pt) in the ressources folder and i
 
 `docker run "your_tag:your_version"`
 
+## Getting predictions
+
+Once the dockerimage is running, you can send POST requests to: `localhost:8080/predictions/my_model` (with `my_model` being the name of your model).
+
+The handler in this project expect the inputs images to be sent via a Multipart form with a "key/value" form having in the keys the strings "img"+`[index]` and in the value, the bytes of each images.
+
+Example:
+-------
+For a batch_size of 5, we would have the following in our Multipart form request:
+
+```
+"img1": [bytes_of_the_1st_image],
+"img2": [bytes_of_the_2st_image],
+"img3": [bytes_of_the_3st_image],
+"img4": [bytes_of_the_4st_image],
+"img5": [bytes_of_the_5st_image],
+```
+
+The return json of the request contain a single list. Each i-th element of this list represent the i-th image detection results (represented by:
+`(x1, y1, x2, y2, conf, cls)`
+
+There is a request example on the image of this readme.
+Note that if there is less input images than the batch size, the rest of the inference batch will be padded with zeros inputs.
 
 ## Note:
 

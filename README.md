@@ -29,6 +29,9 @@ The cool thing with this dockerfile, is that you just need to pass it a yolov5 w
 
 ## Note:
 
+The yolov5 folder in ressources is just here to export the model to a torchscript version.
+(It could be optimized to keep only the `export.py` file)
+
 For the docker-compose, you might have an issue with the GPU:
 - check that you have nvidia-docker installed
 - make a change in docker-compose configs to force GPU usage (there is an issue on docker-compose github open)

@@ -61,3 +61,9 @@ The yolov5 folder in ressources is just here to export the model to a torchscrip
 For the docker-compose, you might have an issue with the GPU:
 - check that you have nvidia-docker installed
 - make a change in docker-compose configs to force GPU usage (there is an issue on docker-compose github open)
+
+If you want to run with a CPU, change the line 'cuda:0' to 'cpu' in the export.py file of yolov5
+
+TO DO:
+- For now I only tested it with GPU as this is my usecase, but later I'll try to automate the build so that it's easier to switch to CPU
+- The whole repo of yolov5 is in the ressource folder, but only the export is used, I will refactor to keep only the export part (a bit tricky with dependencies)

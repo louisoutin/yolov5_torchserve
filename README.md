@@ -33,7 +33,7 @@ You just need to pass a yolov5 weights file (.pt) in the ressources folder and i
 
 Once the dockerimage is running, you can send POST requests to: `localhost:8080/predictions/my_model` (with `my_model` being the name of your model).
 
-The handler in this project expect the inputs images to be sent via a Multipart form with a "key/value" form having in the keys the strings "img"+`[index]` and in the value, the bytes of each images.
+The handler in this project expect the inputs images to be sent via a Multipart form with a "key/value" form having in the keys the strings "img"+`[index]` and in the values, the bytes of each images.
 
 Example:
 -------

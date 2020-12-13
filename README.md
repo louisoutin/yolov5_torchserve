@@ -13,12 +13,12 @@ This is a docker image for Yolo V5 to be run with TorchServe (http server with h
  
 2) After trainning a yolo v5 model on COLAB, move the "weights.pt" to the ressources folder and modify the name of your weights.pt file in the Dockerfile (line 20 and line 22)
 
-2,bis)  Modify "index_to_name.json" to match your classes.
+3)  Modify "index_to_name.json" to match your classes.
 
-3) (Optional) you can modify the `batch size` in the Dockerfile (line 20) and in the `torchserve_handler.py` (line 18) 
+4) (Optional) you can modify the `batch size` in the Dockerfile (line 20) and in the `torchserve_handler.py` (line 18) 
  
 
-4) The docker image is ready to be built and used:
+5) The docker image is ready to be built and used:
 
 `docker build . -t "your_tag:your_version"`
 
@@ -29,4 +29,4 @@ This is a docker image for Yolo V5 to be run with TorchServe (http server with h
 
 For the docker-compose, you might have an issue with the GPU:
 - check that you have nvidia-docker installed
-- make a change in config to force GPU usage
+- make a change in docker-compose configs to force GPU usage (there is an issue on docker-compose github open)

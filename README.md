@@ -2,7 +2,7 @@
 
 This is a docker image for Yolo V5 to be run with TorchServe (http server with high performance and using jitted version of the network).
 
-The cool thing with this dockerfile, is that you just need to pass it a yolov5 weights file (.pt) and it will deploy a server out of it.
+The cool thing with this dockerfile, is that you just need to pass it a yolov5 weights file (.pt) and it will deploy a http server, serving the predictions.
 
 
 ## Usage

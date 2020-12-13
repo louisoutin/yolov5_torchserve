@@ -47,10 +47,10 @@ For a batch_size of 5, we would have the following in our Multipart form request
 "img5": [bytes_of_the_5st_image],
 ```
 
-The return json of the request contain a single list. Each i-th element of this list represent the i-th image detection results (represented by:
-`(x1, y1, x2, y2, conf, cls)`
+The returned json of the request contain a single list. Each i-th element of this list represent the i-th image detection results (represented by:
+`(x1, y1, x2, y2, conf, cls)`)
 
-There is a request example on the image of this readme.
+There is a request example on the image of this Readme.
 Note that if there is less input images than the batch size, the rest of the inference batch will be padded with zeros inputs.
 
 ## Note:

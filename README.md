@@ -16,7 +16,7 @@ You just need to pass a yolov5 weights file (.pt) in the ressources folder and i
  
  Note: for CPU only, you can take the image from docker-hub directly, it should work fine.
  
-2) After trainning a yolo v5 model on COLAB, move the "weights.pt" to the ressources folder and modify the name of your weights.pt file in the Dockerfile (line 20 and line 22)
+2) After trainning a yolo v5 model on COLAB, move the `weights.pt` to the ressources folder and modify the name of your `weights.pt` file in the Dockerfile (line 20 and line 22)
 
 3)  Modify "index_to_name.json" to match your classes.
 

@@ -53,7 +53,10 @@ The returned json of the request contain a single list. Each i-th element of thi
 There is a request example on the image of this Readme.
 Note that if there is less input images than the batch size, the rest of the inference batch will be padded with zeros inputs.
 
-## Note:
+## Troubleshooting
+This repository is getting old and relies on an old version of yolov5. Recent users was not able to use it to serve the latest yolov5 model with TorchServe. But according to [this issue](https://github.com/louisoutin/yolov5_torchserve/issues/6), some people succeeded to serve recent yolov5 models using an alternative [torchserve_handler.py](https://gist.github.com/joek13/b895db0cd50a7c71a123611885057c69) proposed by @joey13
+
+## Notes
 
 The yolov5 folder in ressources is just here to export the model to a torchscript version.
 (It could be optimized to keep only the `export.py` file)
@@ -67,3 +70,4 @@ If you want to run with a CPU, change the line 'cuda:0' to 'cpu' in the export.p
 TO DO:
 - For now I only tested it with GPU as this is my usecase, but later I'll try to automate the build so that it's easier to switch to CPU
 - The whole repo of yolov5 is in the ressource folder, but only the export is used, I will refactor to keep only the export part (a bit tricky with dependencies)
+
